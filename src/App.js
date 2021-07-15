@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Welcome from './components/Welcome';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // Here we declare a state boolean variable "loggedIn" and a function to update it.
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  // We return the Welcome component and pass loggedIn and setLoggedIn as props.
+  return <Welcome loggedIn={loggedIn} setLoggedIn={setLoggedIn} />;
 }
 
 export default App;
